@@ -1,0 +1,2 @@
+class Listn < ApplicationRecord
+end

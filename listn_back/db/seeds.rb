@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Listn.destroy_all
+
+Listn.create!(artist:"Art Bears", work: "Winter Songs", work_type:"Album")
+Listn.create!(artist:"Art Bears", work: "The World As It Is Today", work_type:"Album")
