@@ -1,14 +1,23 @@
 angular
-  .module("listn", [])
-  .controller("ListnController", [ListnControllerFunc] )
-  .factory("ListnFactory", ListenFactoryFunc)
+  .module("listn", [
+    "ngResource"
+  ])
+  .controller("ListnController", [
+    "ListnFactory", 
+    ListnControllerFunc
+  ])
+  .factory("ListnFactory", [
+    "$resource", 
+    ListnFactoryFunc
+  ])
 
-function ListnControllerFunc() {
-  this.listns = [
-    { band: "Art Bears", album: "s/t" }
-  ]
+function ListnControllerFunc(ListnFactory) {
+  this.listns = ListnFactory.query();  
 }
 
-function ListenFactoryFunc(){
-  return [];
+
+function ListnFactoryFunc($resource){
+  return $resource("http://localhost:3000/listns/:id.json", {}, {
+      update: { method: "PUT" }
+    });
 }
