@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117233021) do
+ActiveRecord::Schema.define(version: 20161119215918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,15 @@ ActiveRecord::Schema.define(version: 20161117233021) do
     t.string   "work_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "note_id"
-    t.index ["note_id"], name: "index_listns_on_note_id", using: :btree
   end
 
   create_table "notes", force: :cascade do |t|
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "listn_id"
+    t.index ["listn_id"], name: "index_notes_on_listn_id", using: :btree
   end
 
+  add_foreign_key "notes", "listns"
 end
