@@ -14,8 +14,11 @@ section {
   font-weight: bolder;
 }
 
+/* Table Styling */
+
 table, tbody {
-  margin: 0 auto;
+  vertical-align: top;
+  margin: 0;
   display: table;
   width: 100%;
   border-collapse: collapse;
@@ -49,6 +52,20 @@ td {
   padding: 10px;
 }
 
+  /* Styling for Table Cells */
+
+.artist {
+  text-align: left;
+}
+.work-name {
+  text-align: center;
+}
+.work-type {
+  text-align: right;
+}
+
+/* 4-Layer "Background Image" Styling */
+
 div.other-direction, div.other-direction2,
 div.other-direction3, div.other-direction4 {
   vertical-align: top;
@@ -72,16 +89,6 @@ div.other-direction3::after, div.other-direction4::after {
   content: "";
 }
 
-.artist {
-  text-align: left;
-}
-.work-name {
-  text-align: center;
-}
-.work-type {
-  text-align: right;
-}
-
 div.other-direction::after {
   z-index: -1;
   animation: bg-animation 97s cubic-bezier(.76,1,.39,0) infinite;
@@ -102,11 +109,7 @@ div.other-direction4::after {
   animation: bg-animation4 88s cubic-bezier(.76,1,.39,0) infinite;
 }
 
-@keyframes animate-text {
-  0% {text-shadow: 1px 1px 0px rgba(255, 255, 0, 0.4);}
-  50% {text-shadow: 3px 3px 3px rgba(255, 255, 0, 0.8);}
-  100% {text-shadow: 1px 1px 0px rgba(255, 255, 0, 0.4);}
-}
+/* Animations */
 
 @keyframes bg-animation {
   0% {background-position: 0px 0px ;}
