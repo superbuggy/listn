@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
   <title>List.n</title>
   <script src="https://code.angularjs.org/1.5.8/angular.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js" charset="utf-8"></script>
   <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js" charset="utf-8"></script>
   <script src="app.js" charset="utf-8"></script>
 </head>
@@ -14,16 +15,7 @@
     <div class="other-direction2 background">
       <div class="other-direction3 background">
         <div class="other-direction4 background">
-          <section data-ng-controller="ListnController as vm">
-            <table data-ng-click="vm.changeOpacity()">
-              <tr data-ng-repeat="listn in vm.listns">
-                <td class="artist">{{listn.artist}}</td>
-                &nbsp;
-                <td class="work-name">{{listn.work}}</td>
-                &nbsp;
-                <td class="work-type">{{listn.work_type}}</td>
-              </tr>
-            </table>
+          <section data-ui-view>
           </section>
         </div>
       </div>
