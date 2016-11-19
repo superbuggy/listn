@@ -17,7 +17,8 @@ section {
 table, tbody {
   margin: 0 auto;
   display: table;
-  width: 100%
+  width: 100%;
+  border-collapse: collapse;
 }
 
 td {
@@ -32,8 +33,20 @@ td {
 }
 
 td:hover {
-  transition: text-shadow ease-in-out;
-  text-shadow: .5px .5px 0px rgba(255, 255, 0, 0.8);
+  transition: color .5s ease-in-out;
+  transition: -webkit-text-stroke .5s ease-in-out;
+  text-shadow: 1px 1px 0px rgba(200, 255, 200, 1);
+  color: rgb(0,255,0);
+  -webkit-text-stroke: .2px rgba(0, 150, 0, .7);
+}
+
+tr:hover {
+  transition: background-color .3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+td {
+  padding: 10px;
 }
 
 div.other-direction, div.other-direction2,
@@ -47,16 +60,16 @@ div.other-direction3, div.other-direction4 {
 
 div.other-direction::after,  div.other-direction2::after,
 div.other-direction3::after, div.other-direction4::after {
-  background-repeat: repeat;
-  background-position: 0px 0px;
-  background-image: url("cell.png");
-  content: "";
+  position: absolute;
+  opacity: 0.3;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
-  opacity: 0.3;
+  background-repeat: repeat;
+  background-position: 0px 0px;
+  background-image: url("cell.png");
+  content: "";
 }
 
 .artist {
