@@ -1,9 +1,22 @@
-<table data-ng-click="vm.changeOpacity()">
-  <tr data-ng-repeat="listn in listnsVm.listns">
-    <td class="artist">{{listn.artist}}</td>
+<div class="table">
+
+  <div class="listn-row" data-ng-repeat="listn in listnsVm.listns" data-ng-click="listnsVm.showNotes[$index] = !listnsVm.showNotes[$index]">
+
+    <div class="listn-col artist">
+      <!-- <span data-ng-if="listn.notes.length>0">˜</span> -->
+      {{(listn.notes.length)? "-" : "&nbsp;" ;}}{{listn.artist}}
+    </div>
     &nbsp;
-    <td class="work-name">{{listn.work}}</td>
+    <div class="listn-col work-name">{{listn.work}}</div>
     &nbsp;
-    <td class="work-type">{{listn.work_type}}</td>
-  </tr>
-</table>
+    <div class="listn-col work-type">{{listn.work_type}}</div>
+
+    <div class="notes-table" data-ng-show="listnsVm.showNotes[$index]">
+      <div class="note-row" data-ng-repeat="note in listn.notes">
+        <div class="note-col">&nbsp;&nbsp;{{note.body}}</div>
+      </div>
+    </div>
+
+  </div >
+
+</div>
