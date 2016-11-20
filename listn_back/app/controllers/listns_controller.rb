@@ -1,18 +1,18 @@
 class ListnsController < ApplicationController
   def index
     @listns = Listn.all
-    render json: @listns.to_json
+    render json: @listns.to_json(include: [:notes])
   end
 
   def show
     @listn = Listn.find(params[:listn_id])
-    render json: @listn.to_json
+    render json: @listn.to_json(include: [:notes])
   end
 
   def create
     @listn = Listn.new(listn_params)
     if @listn.save
-      render json: @listn.to_json
+      render json: @listn.to_json(include: [:notes])
     end
   end
 
@@ -20,7 +20,7 @@ class ListnsController < ApplicationController
   def update
     @listn = Listn.find(params[:listn_id])
     @listn.update(listn_params)
-    render json: @listn.to_json
+    render json: @listn.to_json(include: [:notes])
   end
 
   def destroy
