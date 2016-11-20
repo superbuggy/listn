@@ -27,7 +27,13 @@ function RouterFunc($stateProvider) {
 }
 
 function ListnsControllerFunc(ListnsFactory) {
-  this.listns = ListnsFactory.query();
+  var vm = this;
+  vm.showNotes = [];
+  vm.listns = ListnsFactory.query(function(res){
+    res.forEach(function(prom, listn){
+      vm.showNotes.push(false)
+    })
+  });
 }
 
 function ListnsFactoryFunc($resource){
