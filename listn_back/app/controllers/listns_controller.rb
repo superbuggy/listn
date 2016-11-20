@@ -1,11 +1,12 @@
 class ListnsController < ApplicationController
+  
   def index
     @listns = Listn.all
     render json: @listns.to_json(include: [:notes])
   end
 
   def show
-    @listn = Listn.find(params[:listn_id])
+    @listn = Listn.find(params[:id])
     render json: @listn.to_json(include: [:notes])
   end
 
@@ -16,15 +17,14 @@ class ListnsController < ApplicationController
     end
   end
 
-
   def update
-    @listn = Listn.find(params[:listn_id])
+    @listn = Listn.find(params[:id])
     @listn.update(listn_params)
     render json: @listn.to_json(include: [:notes])
   end
 
   def destroy
-    @listn = Listn.find(params[:listn_id])
+    @listn = Listn.find(params[:id])
     @listn.destroy!
   end
 
