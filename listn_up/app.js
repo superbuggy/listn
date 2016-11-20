@@ -58,11 +58,12 @@ function ListnsControllerFunc(ListnsFactory, $state) {
 
   vm.editListn = function(order, id) {
     vm.editNotes[order] = !vm.editNotes[order]
-    vm.editListn = ListnsFactory.get({id: id})
+    vm.editingListn = ListnsFactory.get({id: id})
+    console.log("edit");
   }
 
   vm.updateListn = function(id){
-    vm.editListn.$update({id: id}).then(function(res){
+    vm.editingListn.$update({id: id}).then(function(res){
       $state.go("listnsIndex", {}, {reload: true});
     });
   }

@@ -41,9 +41,9 @@
 
       </div>
       <form data-ng-submit="listnsVm.updateListn(listn.id)" data-ng-show="listnsVm.editNotes[$index]" style="display: inline;">
-        <input type="text" data-ng-model="listnsVm.editListn.artist" >
-        <input type="text" data-ng-model="listnsVm.editListn.work" >
-        <input type="text" data-ng-model="listnsVm.editListn.work_type" >
+        <input type="text" data-ng-model="listnsVm.editingListn.artist" >
+        <input type="text" data-ng-model="listnsVm.editingListn.work" >
+        <input type="text" data-ng-model="listnsVm.editingListn.work_type" >
         <button type="submit" style="display:none;"></button>
         <div class="listn-col" data-ng-click="listnsVm.editNotes[$index] = !listnsVm.editNotes[$index]">
           hide
