@@ -14,8 +14,9 @@ eastman = Listn.create!(artist:"Julius Eastman")
 iso = Listn.create!(artist:"Iso Papasov")
 eliane = Listn.create!(artist:"Eliane Radigue")
 dm = Listn.create!(artist:"Depeche Mode")
-
+smm = Listn.create!(artist:"Samla Mammas Manna", work: "Maltid", work_type: "Album")
 Note.create!(body: "Goth Daddy Fugue", listn_id: dm.id)
 Note.create!(body: "Severe!", listn_id: art_b_winter.id)
 Note.create!(body: "Check out the evil 3", listn_id: eastman.id)
 Note.create!(body: "Scratching the Surface with the Wedding Band", listn_id: iso.id)
+
