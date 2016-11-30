@@ -70,7 +70,7 @@ function ListnsControllerFunc(ListnsFactory, $state) {
 }
 
 function ListnsFactoryFunc($resource){
-  return $resource("http://localhost:3000/listns/:id.json", {}, {
+  return $resource("https://listn.herokuapp.com/listns/:id.json", {}, {
     update: { method: "PUT" }
   });
 }
